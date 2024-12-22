@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.feature-container {
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.2);
+  border: 1px solid rgba(124, 58, 237, 0.1);
+}
+
+.feature-container::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, #7c3aed40, #db277840);
+  border-radius: 1.5rem;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.feature-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 1.5rem;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.feature-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.4);
+}
+
+.feature-container:hover::before {
+  background: linear-gradient(45deg, #7c3aed70, #db277870);
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.5);
+}
+
+.feature-container:hover::after {
+  background: rgba(255, 255, 255, 0.15);
+}
